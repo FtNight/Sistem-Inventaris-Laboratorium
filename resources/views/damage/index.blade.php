@@ -90,16 +90,16 @@
                     <tbody>
                         @foreach($reports as $index => $report)
                             <tr>
-                                <td style="color: #475569; font-size: 0.78rem;">{{ $reports->firstItem() + $index }}</td>
+                                <td style="color: #94a3b8; font-size: 0.8rem; font-weight: 500;">{{ $reports->firstItem() + $index }}</td>
                                 <td>
                                     <a href="{{ route('assets.show', $report->asset_id) }}"
-                                       style="color: #818cf8; text-decoration: none; font-family: monospace; font-size: 0.82rem;">
+                                       style="color: #a5b4fc; text-decoration: none; font-family: monospace; font-size: 0.82rem; font-weight: 600;">
                                         {{ $report->asset->kode_barang ?? '-' }}
                                     </a>
                                 </td>
                                 <td>
-                                    <div style="font-weight: 500; color: #f1f5f9;">{{ $report->asset->nama_barang ?? '-' }}</div>
-                                    <div style="font-size: 0.72rem; color: #475569;">{{ $report->asset->kategori ?? '' }}</div>
+                                    <div style="font-weight: 600; color: #f8fafc;">{{ $report->asset->nama_barang ?? '-' }}</div>
+                                    <div style="font-size: 0.75rem; color: #94a3b8;">{{ $report->asset->kategori ?? '' }}</div>
                                 </td>
                                 <td class="text-center">
                                     <span class="badge badge-soft-danger" style="border-radius: 6px; font-size: 0.82rem; padding: 0.35rem 0.65rem;">
@@ -118,16 +118,16 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <span style="font-size: 0.82rem; color: #94a3b8;">
+                                    <span style="font-size: 0.85rem; color: #cbd5e1;">
                                         {{ $report->notes ? Str::limit($report->notes, 60) : '—' }}
                                     </span>
                                 </td>
                                 <td>
-                                    <div style="font-size: 0.82rem; color: #94a3b8;">{{ $report->user->name ?? '-' }}</div>
+                                    <div style="font-size: 0.85rem; color: #cbd5e1;">{{ $report->user->name ?? '-' }}</div>
                                 </td>
                                 <td>
-                                    <div style="font-size: 0.85rem; color: #cbd5e1;">{{ $report->tanggal->format('d M Y') }}</div>
-                                    <div style="font-size: 0.72rem; color: #475569;">{{ $report->created_at->diffForHumans() }}</div>
+                                    <div style="font-size: 0.85rem; color: #f1f5f9; font-weight: 500;">{{ $report->tanggal->format('d M Y') }}</div>
+                                    <div style="font-size: 0.75rem; color: #94a3b8;">{{ $report->created_at->diffForHumans() }}</div>
                                 </td>
                                 <td class="text-center">
                                     <form action="{{ route('damage.destroy', $report) }}" method="POST" class="d-inline"

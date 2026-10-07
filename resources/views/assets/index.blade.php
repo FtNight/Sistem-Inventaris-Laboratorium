@@ -86,16 +86,16 @@
                     <tbody>
                         @foreach($assets as $index => $asset)
                             <tr>
-                                <td style="color: #475569; font-size: 0.78rem;">{{ $assets->firstItem() + $index }}</td>
+                                <td style="color: #94a3b8; font-size: 0.8rem; font-weight: 500;">{{ $assets->firstItem() + $index }}</td>
                                 <td>
                                     <span class="badge badge-soft-primary" style="border-radius: 6px; font-family: monospace; font-size: 0.78rem;">
                                         {{ $asset->kode_barang }}
                                     </span>
                                 </td>
                                 <td>
-                                    <div style="font-weight: 600; color: #f1f5f9;">{{ $asset->nama_barang }}</div>
+                                    <div style="font-weight: 600; color: #f8fafc;">{{ $asset->nama_barang }}</div>
                                     @if($asset->keterangan)
-                                        <div style="font-size: 0.72rem; color: #64748b; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">
+                                        <div style="font-size: 0.75rem; color: #94a3b8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 220px;">
                                             {{ $asset->keterangan }}
                                         </div>
                                     @endif
@@ -115,11 +115,11 @@
                                     @endif
                                 </td>
                                 <td class="text-center">
-                                    <span class="{{ $asset->stock_damaged > 0 ? 'stock-damaged' : '' }}" style="{{ $asset->stock_damaged == 0 ? 'color: #475569;' : '' }}">
+                                    <span class="{{ $asset->stock_damaged > 0 ? 'stock-damaged' : '' }}" style="{{ $asset->stock_damaged == 0 ? 'color: #94a3b8;' : '' }}">
                                         {{ $asset->stock_damaged }}
                                     </span>
                                 </td>
-                                <td class="text-center" style="color: #94a3b8; font-weight: 600;">
+                                <td class="text-center" style="color: #cbd5e1; font-weight: 600;">
                                     {{ $asset->total_stock }}
                                 </td>
                                 <td class="text-center">

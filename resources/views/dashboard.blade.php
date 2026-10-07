@@ -91,14 +91,14 @@
                                 @foreach($recentIncoming as $log)
                                     <tr>
                                         <td>
-                                            <div style="font-weight: 500; color: #f1f5f9;">{{ $log->asset->nama_barang ?? '-' }}</div>
-                                            <div style="font-size: 0.72rem; color: #64748b;">{{ $log->asset->kode_barang ?? '-' }}</div>
+                                            <div style="font-weight: 600; color: #f8fafc;">{{ $log->asset->nama_barang ?? '-' }}</div>
+                                            <div style="font-size: 0.75rem; color: #94a3b8; font-weight: 500;">{{ $log->asset->kode_barang ?? '-' }}</div>
                                         </td>
                                         <td>
                                             <span class="badge badge-soft-success" style="border-radius: 6px;">+{{ $log->quantity }} unit</span>
                                         </td>
-                                        <td style="color: #94a3b8; font-size: 0.82rem;">{{ $log->source ?: '-' }}</td>
-                                        <td style="color: #94a3b8; font-size: 0.82rem;">{{ $log->tanggal->format('d M Y') }}</td>
+                                        <td style="color: #cbd5e1; font-size: 0.85rem;">{{ $log->source ?: '-' }}</td>
+                                        <td style="color: #cbd5e1; font-size: 0.85rem;">{{ $log->tanggal->format('d M Y') }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -144,8 +144,8 @@
                                 @foreach($recentDamage as $report)
                                     <tr>
                                         <td>
-                                            <div style="font-weight: 500; color: #f1f5f9;">{{ $report->asset->nama_barang ?? '-' }}</div>
-                                            <div style="font-size: 0.72rem; color: #64748b;">{{ $report->asset->kode_barang ?? '-' }}</div>
+                                            <div style="font-weight: 600; color: #f8fafc;">{{ $report->asset->nama_barang ?? '-' }}</div>
+                                            <div style="font-size: 0.75rem; color: #94a3b8; font-weight: 500;">{{ $report->asset->kode_barang ?? '-' }}</div>
                                         </td>
                                         <td>
                                             <span class="badge badge-soft-danger" style="border-radius: 6px;">{{ $report->quantity }} unit</span>
@@ -157,7 +157,7 @@
                                                 <span class="badge badge-soft-danger" style="border-radius: 6px;">Hilang</span>
                                             @endif
                                         </td>
-                                        <td style="color: #94a3b8; font-size: 0.82rem;">{{ $report->tanggal->format('d M Y') }}</td>
+                                        <td style="color: #cbd5e1; font-size: 0.85rem;">{{ $report->tanggal->format('d M Y') }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

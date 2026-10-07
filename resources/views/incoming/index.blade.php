@@ -84,18 +84,18 @@
                     <tbody>
                         @foreach($logs as $index => $log)
                             <tr>
-                                <td style="color: #475569; font-size: 0.78rem;">{{ $logs->firstItem() + $index }}</td>
+                                <td style="color: #94a3b8; font-size: 0.8rem; font-weight: 500;">{{ $logs->firstItem() + $index }}</td>
                                 <td>
                                     <a href="{{ route('assets.show', $log->asset_id) }}"
-                                       style="color: #818cf8; text-decoration: none; font-family: monospace; font-size: 0.82rem;">
+                                       style="color: #a5b4fc; text-decoration: none; font-family: monospace; font-size: 0.82rem; font-weight: 600;">
                                         {{ $log->asset->kode_barang ?? '-' }}
                                     </a>
                                 </td>
                                 <td>
-                                    <div style="font-weight: 500; color: #f1f5f9;">{{ $log->asset->nama_barang ?? '-' }}</div>
+                                    <div style="font-weight: 600; color: #f8fafc;">{{ $log->asset->nama_barang ?? '-' }}</div>
                                 </td>
                                 <td>
-                                    <span class="badge badge-soft-info" style="border-radius: 6px; font-size: 0.72rem;">
+                                    <span class="badge badge-soft-info" style="border-radius: 6px; font-size: 0.75rem;">
                                         {{ $log->asset->kategori ?? '-' }}
                                     </span>
                                 </td>
@@ -106,21 +106,21 @@
                                 </td>
                                 <td>
                                     @if($log->source)
-                                        <div style="font-size: 0.85rem; color: #cbd5e1;">{{ $log->source }}</div>
+                                        <div style="font-size: 0.85rem; color: #e2e8f0; font-weight: 500;">{{ $log->source }}</div>
                                     @endif
                                     @if($log->keterangan)
-                                        <div style="font-size: 0.75rem; color: #64748b;">{{ Str::limit($log->keterangan, 50) }}</div>
+                                        <div style="font-size: 0.78rem; color: #94a3b8;">{{ Str::limit($log->keterangan, 50) }}</div>
                                     @endif
                                     @if(!$log->source && !$log->keterangan)
-                                        <span style="color: #475569; font-size: 0.82rem;">—</span>
+                                        <span style="color: #64748b; font-size: 0.82rem;">—</span>
                                     @endif
                                 </td>
                                 <td>
-                                    <div style="font-size: 0.82rem; color: #94a3b8;">{{ $log->user->name ?? '-' }}</div>
+                                    <div style="font-size: 0.85rem; color: #cbd5e1;">{{ $log->user->name ?? '-' }}</div>
                                 </td>
                                 <td>
-                                    <div style="font-size: 0.85rem; color: #cbd5e1;">{{ $log->tanggal->format('d M Y') }}</div>
-                                    <div style="font-size: 0.72rem; color: #475569;">{{ $log->created_at->diffForHumans() }}</div>
+                                    <div style="font-size: 0.85rem; color: #f1f5f9; font-weight: 500;">{{ $log->tanggal->format('d M Y') }}</div>
+                                    <div style="font-size: 0.75rem; color: #94a3b8;">{{ $log->created_at->diffForHumans() }}</div>
                                 </td>
                                 <td class="text-center">
                                     <form action="{{ route('incoming.destroy', $log) }}" method="POST" class="d-inline"

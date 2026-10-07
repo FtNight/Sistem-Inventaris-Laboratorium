@@ -100,10 +100,10 @@
                             <tbody>
                                 @foreach($asset->incomingGoodsLogs->sortByDesc('tanggal') as $log)
                                     <tr>
-                                        <td style="font-size: 0.8rem; color: #94a3b8;">{{ $log->tanggal->format('d M Y') }}</td>
+                                        <td style="font-size: 0.82rem; color: #cbd5e1; font-weight: 500;">{{ $log->tanggal->format('d M Y') }}</td>
                                         <td><span class="badge badge-soft-success" style="border-radius: 6px;">+{{ $log->quantity }}</span></td>
-                                        <td style="font-size: 0.82rem;">{{ $log->source ?: '-' }}</td>
-                                        <td style="font-size: 0.82rem; color: #64748b;">{{ $log->user->name ?? '-' }}</td>
+                                        <td style="font-size: 0.85rem; color: #f8fafc;">{{ $log->source ?: '-' }}</td>
+                                        <td style="font-size: 0.85rem; color: #94a3b8;">{{ $log->user->name ?? '-' }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -128,7 +128,7 @@
             </div>
             <div class="card-body p-0">
                 @if($asset->damageReports->isEmpty())
-                    <div class="text-center py-4" style="color: #475569; font-size: 0.85rem;">
+                    <div class="text-center py-4" style="color: #94a3b8; font-size: 0.85rem;">
                         <i class="bi bi-shield-check"></i> Tidak ada laporan kerusakan
                     </div>
                 @else
@@ -145,7 +145,7 @@
                             <tbody>
                                 @foreach($asset->damageReports->sortByDesc('tanggal') as $report)
                                     <tr>
-                                        <td style="font-size: 0.8rem; color: #94a3b8;">{{ $report->tanggal->format('d M Y') }}</td>
+                                        <td style="font-size: 0.82rem; color: #cbd5e1; font-weight: 500;">{{ $report->tanggal->format('d M Y') }}</td>
                                         <td><span class="badge badge-soft-danger" style="border-radius: 6px;">{{ $report->quantity }}</span></td>
                                         <td>
                                             @if($report->jenis_kerusakan === 'rusak')
@@ -154,7 +154,7 @@
                                                 <span class="badge badge-soft-danger" style="border-radius: 6px; font-size: 0.72rem;">Hilang</span>
                                             @endif
                                         </td>
-                                        <td style="font-size: 0.78rem; color: #64748b; max-width: 150px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                        <td style="font-size: 0.82rem; color: #94a3b8; max-width: 150px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                                             {{ $report->notes ?: '-' }}
                                         </td>
                                     </tr>
